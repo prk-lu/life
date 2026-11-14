@@ -4,9 +4,13 @@ import Graphics.Gloss
 import Graphics.Gloss.Interface.Pure.Game
 import Life (Board, Cell, step)
 
--- Starting pattern: a glider. Gloss's y axis points up.
+-- Starting pattern: the R-pentomino. Just 5 cells, but it churns for
+-- ~1100 generations, throwing off gliders before it settles. Gloss's y axis points up.
+--    .##
+--    ##.
+--    .#.
 start :: Board
-start = [(1, 0), (2, -1), (0, -2), (1, -2), (2, -2)]
+start = [(0, 1), (1, 1), (-1, 0), (0, 0), (0, -1)]
 
 data World = World
   { board   :: Board
